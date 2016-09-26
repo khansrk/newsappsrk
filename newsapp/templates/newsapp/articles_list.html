@@ -1,0 +1,32 @@
+{% extends 'newsapp/base.html' %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1 align="center">News Application</h1>
+    <p align="center">Read latest news articles from Reuters latest news feeds.</p>
+	 <p align="center">Register Yourself to Add latest news feeds.</p>
+  </div>
+</div>
+
+<div class="container">
+  {% for row in rows %}
+  <div class="col-md-6">
+    {% for entry in row %}
+    <h2>{{entry.title}}</h2>
+    <p>{{entry.description | safe}}</p>
+    <p><a href="{{entry.url}}" target="_blank" class="btn btn-success">View Details</a></p>
+    {% endfor %}
+  </div>
+  {% endfor %}
+<hr><hr>
+  <footer>
+    <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django" /></a>
+	<hr><hr>
+	<p>Developed by Shahrukh Khan</p>
+  </footer>
+</div> <!-- /container -->
+
+{% endblock %}

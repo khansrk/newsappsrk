@@ -1,0 +1,28 @@
+{% extends 'newsapp/base.html' %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 align="center">News Feeds</h1>
+  </div>
+</div>
+
+<div class="container">
+  <a href="{% url 'feed_new' %}" class="btn btn-success">New Feed</a>
+  <hr>
+  <ul>
+    {% for feed in feeds %}
+      <li><a href="{{feed.url}}">{{feed.title}}</a></li>
+    {% endfor %}
+  </ul>
+
+  <footer>
+    <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." align="center" /></a>
+	<hr><hr>
+	<p>Developed by Shahrukh Khan</p>
+  </footer>
+</div> <!-- /container -->
+
+{% endblock %}

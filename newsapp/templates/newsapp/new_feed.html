@@ -1,0 +1,27 @@
+{% extends 'newsapp/base.html' %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1 align="center">New Feed</h1>
+  </div>
+</div>
+
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <hr>
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+<hr><hr>
+  <footer>
+    <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
+	<hr><hr>
+	<p>Developed by Shahrukh Khan</p>
+  </footer>
+</div> <!-- /container -->
+
+{% endblock %}
