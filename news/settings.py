@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'newsapp',
+    'dj_database_url',
+    'psycopg2',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,8 +79,12 @@ WSGI_APPLICATION = 'news.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'newsapp',
+        'USER': 'postgres',
+        'PASSWORD': '5694950',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
