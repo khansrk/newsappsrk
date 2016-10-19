@@ -1,2 +1,4 @@
 Django==1.8
 feedparser==5.2.1
+dj-database-url==0.4.1
+psycopg2
