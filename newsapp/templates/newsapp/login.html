@@ -22,6 +22,11 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 <meta charset="UTF-8">
+	
+function onButtonClick() {
+  FB.AppEvents.logEvent("Login");
+}
+	
 	</script>
 </head>
 <body>
@@ -41,7 +46,7 @@
 	</div>
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
-			<button type="submit" class="btn btn-success">Submit</button>
+			<button type="submit" class="btn btn-success" onClick = "onButtonClick()">Submit</button>
 		</div>
 	</div>
 </form>
