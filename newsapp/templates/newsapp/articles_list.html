@@ -22,11 +22,11 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 	
-function logArticleListEvent(content, name) {
+function logViewedContentEvent(contentType, contentId, currency, price) {
     var params = {};
-    params['Content'] = content;
-    params['name'] = name;
-    FB.AppEvents.logEvent('article list', null, params);
+    params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = 'article';
+    params[FB.AppEvents.ParameterNames.CONTENT_ID] = '1';
+    FB.AppEvents.logEvent(FB.AppEvents.EventNames.VIEWED_CONTENT, price, params);
 }
 </script>
 );
