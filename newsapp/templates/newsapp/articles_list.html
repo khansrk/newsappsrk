@@ -22,12 +22,11 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 	
-function logViewedContentEvent(contentType, contentId, currency, price) {
+function logArticleListEvent(content, name) {
     var params = {};
-    params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = contentType;
-    params[FB.AppEvents.ParameterNames.CONTENT_ID] = contentId;
-    params[FB.AppEvents.ParameterNames.CURRENCY] = currency;
-    FB.AppEvents.logEvent(FB.AppEvents.EventNames.VIEWED_CONTENT, price, params);
+    params['Content'] = content;
+    params['name'] = name;
+    FB.AppEvents.logEvent('article list', null, params);
 }
 </script>
 );
@@ -49,7 +48,7 @@ function logViewedContentEvent(contentType, contentId, currency, price) {
     {% for entry in row %}
     <h2>{{entry.title}}</h2>
     <p>{{entry.description | safe}}</p>
-    <p><a href="{{entry.url}}" target="_blank" class="btn btn-success" onclick = "logViewedContentEvent()">View Details</a></p>
+    <p><a href="{{entry.url}}" target="_blank" class="btn btn-success" onclick = "logArticleListEvent()">View Details</a></p>
     {% endfor %}
   </div>
   {% endfor %}
