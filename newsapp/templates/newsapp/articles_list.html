@@ -49,7 +49,7 @@ function logViewedContentEvent(contentType, contentId, currency, price) {
     {% for entry in row %}
     <h2>{{entry.title}}</h2>
     <p>{{entry.description | safe}}</p>
-    <p><a href="{{entry.url}}" target="_blank" class="btn btn-success" onclick = "onButtonClick()">View Details</a></p>
+    <p><a href="{{entry.url}}" target="_blank" class="btn btn-success" onclick = "logViewedContentEvent()">View Details</a></p>
     {% endfor %}
   </div>
   {% endfor %}
