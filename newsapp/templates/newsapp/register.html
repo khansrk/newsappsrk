@@ -21,6 +21,10 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+function onButtonClick() {
+  FB.AppEvents.logEvent("Registered");
+}
 </script>
 );
 <meta charset="UTF-8">
@@ -49,7 +53,7 @@
 	</div>
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
-			<button type="submit" class="btn btn-success">Submit</button>
+			<button type="submit" class="btn btn-success" onClick="onButtonClick()">Submit</button>
 		</div>
 	</div>
 </form>
