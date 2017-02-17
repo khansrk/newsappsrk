@@ -21,6 +21,10 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+	function onButtonClick() {
+	console.log("abcd")
+  FB.AppEvents.logEvent("View article details");
+}
 </script>
 );
 	</head>
@@ -41,7 +45,7 @@
     {% for entry in row %}
     <h2>{{entry.title}}</h2>
     <p>{{entry.description | safe}}</p>
-    <p><a href="{{entry.url}}" target="_blank" class="btn btn-success">View Details</a></p>
+    <p><a href="{{entry.url}}" target="_blank" class="btn btn-success" onclick = "onButtonClick()">View Details</a></p>
     {% endfor %}
   </div>
   {% endfor %}
