@@ -21,9 +21,11 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-	function onButtonClick() {
-	console.log("abcd")
-  FB.AppEvents.logEvent("View article details");
+	
+function logArticleListEvent(title) {
+    var params = {};
+    params['title'] = title;
+    FB.AppEvents.logEvent('article list', null, params);
 }
 </script>
 );
