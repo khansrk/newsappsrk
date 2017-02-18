@@ -10,34 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
 
 	  <title>Django News Application</title>
- <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1754310701551319',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-	 
- var params = {};
-params[FB.AppEvents.ParameterNames.CONTENT_TYPE] = 'Feeds'; //player level
-FB.AppEvents.logEvent(
-  FB.AppEvents.EventNames.CONTENT_TYPE,
-  null,  // numeric value for this event - in this case, none
-  params
-);
-</script>
-
-    <!-- Bootstrap core CSS -->
+<!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
