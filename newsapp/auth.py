@@ -31,14 +31,16 @@ def login(request):
 def register(request):
     if request.method == "GET":
         return render(request, "newsapp/register.html");
-    elif request.method == "POST":
+    if request.method == "POST":
         username = request.POST["username"];
         password = request.POST["password"];
         email = request.POST["email"];
-
-        # call create_user from the ORM. Make sure you call save!
-        auth.models.User.objects.create_user(username, email, password).save();
-        #log the user in
-        user = auth.authenticate(username = username, password = password);
-        auth.login(request, user);
-        return render(request, "newsapp/registered.html");
+        if auth.models.User.objects.filter(username=username).exists() or auth.models.User.objects.filter(email=email).exists():
+             return render(request,"auth/register.html",{ "warning": "Username or email Already exists" })
+        else:  
+            # call create_user from the ORM. Make sure you call save!
+            auth.models.User.objects.create_user(username, email, password).save();
+            #log the user in
+            user = auth.authenticate(username = username, password = password);
+            auth.login(request, user);
+            return render(request, "newsapp/registered.html");
